@@ -1,34 +1,45 @@
-import React, { Component } from 'react';
-import { createPortal } from 'react-dom';
-import './Modal.module.css'
+import { Component } from "react";
+import { createPortal } from "react-dom";
+import PropTypes from 'prop-types';
+import { ModalWr } from "./ModalWr.styled";
+
+
+
 const modalRoot = document.querySelector('#modal-root');
-class Modal extends Component {
+
+export class Modal extends Component {
+
     componentDidMount() {
-        window.addEventListener('keydown', this.handelLeyDown)
+        document.addEventListener('keydown', this.closeModalByEsc)
     }
+
     componentWillUnmount() {
-        window.removeEventListener('keydown', this.handelLeyDown)
+        document.removeEventListener('keydown', this.closeModalByEsc)
     }
 
-    handelLeyDown = e => {
+    closeModalByEsc = e => {
         if (e.code === 'Escape') {
-            this.props.onClose()
-        }
+                this.props.toggleModal()
+            }
     }
-    handelBackdropClick = e => {
-        if (e.currentTarget === e.target) {
-            this.props.onClose()
-        }
-    }
-    render() {
-        return createPortal(
-            <div className="Overlay" onClick={this.handelBackdropClick}>
-                <div className="Modal">
-                    <img src={this.props.img} alt='' />
-                </div>
-            </div>, modalRoot
-        )
-    }
-}
 
-export default Modal
+
+    render() {
+        const {largeImageURL} = this.props
+
+        return createPortal(
+            <ModalWr>
+                <div className="Modal">
+                    <img src={largeImageURL} alt="" />
+                </div>
+            </ModalWr>,
+            modalRoot
+        );
+    };
+};
+
+
+Modal.propTypes = {
+    toggleModal: PropTypes.func.isRequired,
+    largeImageURL: PropTypes.string.isRequired,
+}

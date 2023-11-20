@@ -1,25 +1,27 @@
-import React from 'react';
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
-import loaders from 'react-loader-spinner';
-import css from './Loader.module.css';
+import PropTypes from 'prop-types';
 
-const LoaderSpinner = () => {
-  return (
-    <div className={css.container}>
-      <loaders.Oval
-        height={80}
-        width={80}
-        color="#4fa94d"
-        wrapperStyle={{}}
-        wrapperClass=""
-        visible={true}
-        ariaLabel="oval-loading"
-        secondaryColor="#4fa94d"
-        strokeWidth={2}
-        strokeWidthSecondary={2}
-      />
-    </div>
-  );
+
+import ThreeDots from "react-loader-spinner";
+
+export const Loader = ({loading}) => {
+    return (
+        <div>
+            <ThreeDots
+                width="180"
+                radius="9"
+                color="#331796"
+                ariaLabel="three-dots-loading"
+                wrapperStyle={{
+                    justifyContent: 'center',
+                    margin: '15px 0',
+                }}
+
+                visible={loading}
+            />
+        </div>
+    );
 };
 
-export default LoaderSpinner;
+Loader.propTypes = {
+    loading: PropTypes.bool.isRequired,
+}

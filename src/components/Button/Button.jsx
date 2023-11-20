@@ -1,9 +1,10 @@
-import './Button.module.css';
+import PropTypes from 'prop-types';
+import { Button } from './Button.styled.js';
 
-const Button = ({ onclick, ...allyProps }) => (
-    <div className="buttonPosition">
-        <button type='button' className='Button' onClick={onclick} {...allyProps}>Load more</button>
-    </div>
-)
+export const LoadMoreButton = ({ getNextPage }) => {
+    return( <Button className="Button" type="button" onClick={getNextPage}>Load more</Button>  )
+}
 
-export default Button
+LoadMoreButton.propTypes = {
+    getNextPage: PropTypes.func.isRequired,
+}
