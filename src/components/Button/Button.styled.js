@@ -13,6 +13,7 @@ padding: 8px 16px;
   text-decoration: none;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 12px;
   cursor: pointer;
   font-family: inherit;
   font-size: 18px;
