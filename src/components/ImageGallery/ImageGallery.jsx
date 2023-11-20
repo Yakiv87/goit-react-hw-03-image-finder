@@ -5,7 +5,7 @@ import ImageGalleryItem from '../ImageGalleryItem/ImageGalleryItem';
 import './ImageGallery.module.css';
 import Button from '../Button/Button';
 import Modal from '../Modal/Modal';
-import Loaders from "../Loaders/Loaders";
+import Loaders from "../Loader/Loader";
 
 
 
