@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { SearchBar } from './Searchbar/Searchbar';
 import { ImageGallery } from './ImageGallery/ImageGallery';
-import { getImages } from './Api-image/api-image';
+import { getImages } from './api-image';
 import { LoadMoreButton } from 'components/Button/Button';
 import { Loader } from './Loader/Loader';
 
