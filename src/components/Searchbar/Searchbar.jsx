@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { ImSearch } from "react-icons/im"
 import PropTypes from 'prop-types';
-import { SearchbarWrapper } from "./Searchbar.styled";
+import { SearchbarWrapper } from "./SearchbarWrapper.styled";
 
 
 export class SearchBar extends Component {

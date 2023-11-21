@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { createPortal } from "react-dom";
 import PropTypes from 'prop-types';
-import { ModalWr } from "./ModalWr.styled";
+import { ModalWrapper } from "./ModalWrapper.styled";
 
 
 
@@ -28,11 +28,11 @@ export class Modal extends Component {
         const {largeImageURL} = this.props
 
         return createPortal(
-            <ModalWr>
+            <ModalWrapper>
                 <div className="Modal">
                     <img src={largeImageURL} alt="" />
                 </div>
-            </ModalWr>,
+            </ModalWrapper>,
             modalRoot
         );
     };
