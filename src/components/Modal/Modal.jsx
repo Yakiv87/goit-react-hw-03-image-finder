@@ -25,8 +25,8 @@ export class Modal extends Component {
 
 
     render() {
-        const {largeImageURL} = this.props
-
+        const {largeImageURL} = this.props?.largeImageURL;
+        
         return createPortal(
             <ModalWrapper>
                 <div className="Modal">
