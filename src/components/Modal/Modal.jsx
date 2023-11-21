@@ -5,7 +5,7 @@ import { ModalWrapper } from "./ModalWrapper.styled";
 
 
 
-const modalRoot = document.querySelector('#modal-root');
+const modalRoot = document.querySelector('modal-root') || document.body;;
 
 export class Modal extends Component {
 
